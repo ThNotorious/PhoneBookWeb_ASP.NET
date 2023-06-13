@@ -1,0 +1,47 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Контакты";
+}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid d-flex justify-content-between">
+        <h1 class="text-center">Контакты</h1>
+        <form class="d-flex ms-auto text-end" method="get" action="/Home/FilterContacts">
+            <div class="d-flex align-items-center">
+                <a class="btn btn-outline-dark me-2" href="/Home/Add">Добавить</a>
+                <input class="form-control" name="secondName" type="search" placeholder="Поиск по фамилии" aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit">Найти</button>
+            </div>
+        </form>
+    </div>
+</nav>
+
+<div class="row justify-content-center">
+    <div class="col">
+        <table class="table table-hover table-responsive-md mx-auto text-center">
+            <thead class="thead-inverse">
+                <tr>
+                    <th>ID</th>
+                    <th>Фамилия</th>
+                    <th>Имя</th>
+                    <th>Отчество</th>
+                    <th>Действия</th>
+                </tr>
+            </thead>
+            <tbody>
+                  @foreach (var item in ViewBag.Contacts)
+                {
+                <tr>
+                <td>@item.ID</td>
+                <td>@item.SecondName</td>
+                <td>@item.FirstName</td>
+                <td>@item.MiddleName</td>
+                <td>
+                <a class="btn btn-outline-success" href="/Home/More?idContact=@item.ID">Открыть контакт</a>
+                </td>
+                </tr>
+                }
+            </tbody> 
+        </table>
+    </div>
+</div>

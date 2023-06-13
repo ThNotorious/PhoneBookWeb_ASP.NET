@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Данные контакта";
+}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light  mb-3">
+    <div class="container-fluid d-flex justify-content-between">
+        <h1 class="text-center">@ViewBag.Contact.FirstName @ViewBag.Contact.SecondName</h1>
+        <form class="d-flex ms-auto text-end">
+            <div class="d-flex align-items-center">
+                <a class="btn btn-outline-dark" aria-current="page" href="/Home">Домой</a>
+            </div>
+        </form>
+    </div>
+</nav>
+
+<div class="row justify-content-center">
+    <form action="/Home/Changed?idContact=@ViewBag.Contact.ID" method="post" class="text-center">
+
+        <input class="form-control mb-3" type="text" name="newSecondName" value="@ViewBag.Contact.SecondName" />
+        <input class="form-control mb-3" type="text" name="newFirstName" value="@ViewBag.Contact.FirstName" />
+        <input class="form-control mb-3" type="text" name="newMiddleName" value="@ViewBag.Contact.MiddleName" />
+        <input class="form-control mb-3" type="number" name="newPhoneNumber" value="@ViewBag.Contact.PhoneNumber" />
+        <input class="form-control mb-3" type="text" name="newDescription" value="@ViewBag.Contact.Description" />
+
+        <div class="text-end">
+            <button class="btn btn-outline-warning me-2" type="submit">Применить изменения</button>
+            <a class="btn btn-outline-danger me-2" href="/Home/Delete?idContact=@ViewBag.Contact.ID">Удалить контакт</a>
+        </div>
+    </form>
+</div>
