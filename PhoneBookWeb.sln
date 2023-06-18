@@ -5,9 +5,9 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneBookWeb", "PhoneBookWeb\PhoneBookWeb.csproj", "{A2651ABB-4B05-4928-AEE8-EC3AF6727CE6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneBookWeb+Api", "PhoneBookWeb+Api\PhoneBookWeb+Api.csproj", "{0F5297D1-1066-43A4-AE45-6C8A21164EAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneBookWpf", "PhoneBookWpf\PhoneBookWpf.csproj", "{391C0042-C786-4927-B992-6B7984705FE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneBookWpf", "PhoneBookWpf\PhoneBookWpf.csproj", "{391C0042-C786-4927-B992-6B7984705FE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PhoneBookApi", "PhoneBookApi\PhoneBookApi.csproj", "{1B730C90-866B-49D4-947B-775862C19E70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{A2651ABB-4B05-4928-AEE8-EC3AF6727CE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2651ABB-4B05-4928-AEE8-EC3AF6727CE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2651ABB-4B05-4928-AEE8-EC3AF6727CE6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0F5297D1-1066-43A4-AE45-6C8A21164EAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0F5297D1-1066-43A4-AE45-6C8A21164EAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0F5297D1-1066-43A4-AE45-6C8A21164EAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0F5297D1-1066-43A4-AE45-6C8A21164EAB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{391C0042-C786-4927-B992-6B7984705FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{391C0042-C786-4927-B992-6B7984705FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{391C0042-C786-4927-B992-6B7984705FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{391C0042-C786-4927-B992-6B7984705FE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B730C90-866B-49D4-947B-775862C19E70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B730C90-866B-49D4-947B-775862C19E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B730C90-866B-49D4-947B-775862C19E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B730C90-866B-49D4-947B-775862C19E70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
