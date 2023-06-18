@@ -1,0 +1,20 @@
+﻿PhoneBookWpf
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\goldb\OneDrive\Рабочий стол\C#\PhoneBookWeb\PhoneBookWpf\obj\Debug\net6.0-windows\
+PhoneBookWpf
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+C:\Users\goldb\OneDrive\Рабочий стол\C#\PhoneBookWeb\PhoneBookWpf\App.xaml
+6-306559749
+
+251794242529
+332782696971
+Views\Windows\AddWindow.xaml;Views\Windows\AuthorizeWindow.xaml;Views\Windows\DemoViewWindow.xaml;Views\Windows\EditWindow.xaml;Views\Windows\MainWindow.xaml;Views\Windows\UsersWindow.xaml;
+
+True
+

@@ -1,0 +1,155 @@
+﻿<Window x:Class="PhoneBookWpf.Views.Windows.AuthorizeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm ="clr-namespace:PhoneBookWpf.ViewModels"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Авторизация"
+        Name="AuthWindow"
+        MaxHeight="250"
+        MinHeight="250"
+        MinWidth="350"
+        MaxWidth="350">
+
+    <Window.DataContext>
+        <vm:AuthorizeWindowViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="59*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox x:Name="textLogin"
+             Margin="20,10,20,0"
+             TextWrapping="Wrap"
+             Text="{Binding Login}"
+             Height="30"
+             Grid.ColumnSpan="3"
+             VerticalAlignment="Top"
+             FontSize="14"
+             Padding="5" Grid.Row="1">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TextBox">
+                                <Border Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Grid>
+                                        <TextBlock x:Name="PlaceholderText"
+                                               Text="Введите логин..."
+                                               Foreground="Gray"
+                                               FontSize="14"
+                                               Margin="5"
+                                               Visibility="Collapsed"
+                                               IsHitTestVisible="False"/>
+                                        <ScrollViewer x:Name="PART_ContentHost" />
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter TargetName="PlaceholderText" Property="Visibility" Value="Visible"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+
+        <TextBox x:Name="textPassword"
+             Margin="20,5,20,0"
+             Text="{Binding Path=Password}"
+             Height="30"
+             Grid.ColumnSpan="3"
+             VerticalAlignment="Top"
+             FontSize="14"
+             Padding="5"
+             Grid.Row="2">
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TextBox">
+                                <Border Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}">
+                                    <Grid>
+                                        <TextBlock x:Name="PlaceholderText"
+                                               Text="Введите пароль..."
+                                               Foreground="Gray"
+                                               FontSize="14"
+                                               Margin="5"
+                                               Visibility="Collapsed"
+                                               IsHitTestVisible="False"/>
+                                        <ScrollViewer x:Name="PART_ContentHost" />
+                                    </Grid>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Text" Value="">
+                                        <Setter TargetName="PlaceholderText" Property="Visibility" Value="Visible"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+
+
+        <Button x:Name="authorizationButton"
+            Content="Вход"
+            VerticalAlignment="Center"
+            Command="{Binding LoginCommand}"
+            CommandParameter="{Binding ElementName=AuthWindow}"
+            Height="30"
+            Width="90"
+            Grid.Column="2"
+            Grid.Row="3"
+            HorizontalAlignment="Center"
+            FontSize="14"/>
+
+        <Button x:Name="registerButton"
+            Content="Регистрация"
+            Command="{Binding RegisterCommand}"
+            CommandParameter="{Binding ElementName=AuthWindow}"
+            HorizontalAlignment="Center"
+            Width="90"
+            Height="30"
+            VerticalAlignment="Center"
+            Grid.Row="3"
+            FontSize="14"/>
+
+        <Button x:Name="skipButton"
+            Content="Пропустить"
+            Height="30"
+            VerticalAlignment="Center"
+            Command="{Binding SkipCommand}"
+            CommandParameter="{Binding ElementName=AuthWindow}"
+            Grid.Column="1"
+            FontSize="14" Grid.Row="3" Margin="13,0,13,0"/>
+
+        <Label x:Name="error"
+           Foreground="Red"
+           VerticalAlignment="Center"
+           Height="35"
+           Content="{Binding ErrorContent}"
+           FontSize="12" Grid.ColumnSpan="3" Margin="20,0,20,0" FontWeight="Bold"/>
+    </Grid>
+
+</Window>

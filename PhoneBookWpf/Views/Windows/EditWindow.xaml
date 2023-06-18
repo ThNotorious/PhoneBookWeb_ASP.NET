@@ -1,0 +1,54 @@
+﻿<Window x:Class="PhoneBookWpf.Views.Windows.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PhoneBookWpf.Views.Windows"
+        xmlns:vm="clr-namespace:PhoneBookWpf.ViewModels"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Редактирование контакта" Height="300" Width="300"
+        Name="EditDataContact">
+
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Width="200">
+            <TextBlock Text="Фамилия"/>
+            <TextBox  Name="SecondNameBlock"
+                      Text="{Binding Contact.SecondName}"/>
+
+            <TextBlock Text="Имя"/>
+            <TextBox  Name="FirstNameBlock"
+                      Text="{Binding Contact.FirstName}"/>
+
+            <TextBlock Text="Отчество"/>
+            <TextBox  Name="MiddleNameBlock"
+                      Text="{Binding Contact.MiddleName}"/>
+
+            <TextBlock Text="Номер телефона"/>
+            <TextBox  Name="PhoneNumberBlock"
+                      Text="{Binding Contact.PhoneNumber}"/>
+
+            <TextBlock Text="Описание"/>
+            <TextBox  Name="DescriptionBlock"
+                      Text="{Binding Contact.Description}"/>
+
+            <Label  Name="ErrorBlock"
+                      Content="{Binding ErrorContent}" Foreground="#FFF54D4D" FontWeight="Bold"/>
+
+        </StackPanel>
+        <Button Grid.Row="1" 
+                Content="Сохранить изменения"
+                 Command="{Binding EditCommand}"
+                CommandParameter="{Binding ElementName=EditDataContact}"/>
+    </Grid>
+</Window>
